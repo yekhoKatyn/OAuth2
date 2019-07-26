@@ -12,11 +12,11 @@ def hello_world():
 @app.route('/autorize')
 def autorize():
     PARAMS = {'client_id':"12"} 
-    r = req.get(url = "http://127.0.0.1:5000/ouath/autorize", params = PARAMS) 
+    r = req.get(url = "http://64.71.146.9:5000/ouath/autorize", params = PARAMS) 
     data = r.json()
     print(data)
     url_str = data["url_s"]
     return redirect(url_str)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True, host='0.0.0.0',  port=5001)
